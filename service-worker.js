@@ -1,12 +1,17 @@
-// service-worker.js
-
 const CACHE_NAME = 'jokenpo-cache-v1';
 const urlsToCache = [
     '/',
     '/index.html',
     '/styles.css',
     '/app.js',
-    '/img/', // Cache a pasta img inteira
+    '/img/pedra.png',
+    '/img/papel.png',
+    '/img/tesoura.png',
+    '/img/pcpedra.png',
+    '/img/pcpapel.png',
+    '/img/pctesoura.png',
+    '/img/logo2.png',
+    // Adicione outros arquivos necessários
 ];
 
 // Instala o service worker e faz o cache dos arquivos
@@ -39,7 +44,14 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request)
             .then((response) => {
-                return response || fetch(event.request);
+                // Retorna a resposta do cache, ou faz a requisição se não estiver no cache
+                return response || fetch(event.request).then((networkResponse) => {
+                    // Atualiza o cache com a nova resposta
+                    return caches.open(CACHE_NAME).then((cache) => {
+                        cache.put(event.request, networkResponse.clone());
+                        return networkResponse;
+                    });
+                });
             })
     );
 });
