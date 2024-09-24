@@ -1,0 +1,141 @@
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 18px;
+        /* Diminui o tamanho da fonte do placar em telas pequenas */
+    }
+
+    .imagem img {
+        width: 80px;
+        /* Diminui a largura da imagem em telas menores */
+    }
+
+    .imagem label span {
+        font-size: 16px;
+        /* Diminui o tamanho da fonte do texto abaixo das imagens */
+    }
+
+    body {
+        padding: 10px;
+        /* Reduz o espaçamento geral em telas menores */
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /* Altera para a fonte Roboto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centraliza o conteúdo na horizontal */
+    background: linear-gradient(to bottom, rgba(224, 247, 250, 0.9), rgba(255, 255, 255, 0.9)),
+        url('caminho-da-sua-imagem.jpg');
+    /* Gradiente de fundo com imagem */
+    background-size: cover;
+    /* Faz a imagem de fundo cobrir toda a tela */
+    background-position: center;
+    /* Centraliza a imagem de fundo */
+    background-repeat: no-repeat;
+    /* Evita que a imagem se repita */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #00796b;
+    /* Cor do título */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    /* Sombra no texto */
+}
+
+h2 {
+    margin-top: 20px;
+    /* Espaçamento acima dos subtítulos */
+    color: #00796b;
+    /* Cor dos subtítulos */
+}
+
+.imagem {
+    display: flex;
+    /* Utiliza Flexbox para alinhamento horizontal */
+    justify-content: center;
+    /* Centraliza os itens na horizontal */
+    margin-bottom: 20px;
+    /* Espaçamento abaixo da div de imagens */
+}
+
+.imagem label {
+    display: flex;
+    /* Faz com que o conteúdo dentro do label fique em coluna */
+    flex-direction: column;
+    /* Coloca os itens em uma coluna */
+    align-items: center;
+    /* Centraliza os itens no eixo horizontal */
+    cursor: pointer;
+    /* Para indicar que é clicável */
+    transition: transform 0.2s;
+    /* Transição suave para animação */
+}
+
+.imagem label:hover {
+    transform: scale(1.05);
+    /* Aumenta um pouco ao passar o mouse */
+}
+
+.imagem label span {
+    font-size: 18px;
+    /* Aumenta o tamanho da fonte */
+    color: #00796b;
+    /* Cor do texto */
+    font-weight: bold;
+    /* Deixa o texto em negrito */
+}
+
+.imagem img {
+    width: 100px;
+    /* Tamanho das imagens */
+    height: auto;
+    /* Mantém a proporção */
+    margin-bottom: 5px;
+    /* Espaçamento entre a imagem e o texto */
+    border: 3px solid #00796b;
+    /* Borda ao redor das imagens */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    transition: transform 0.3s;
+    /* Transição suave para animação */
+}
+
+.imagem img:hover {
+    transform: scale(1.1);
+    /* Aumenta a imagem ao passar o mouse */
+}
+
+hr {
+    width: 100%;
+    /* Largura total */
+    margin: 20px 0;
+    /* Margens acima e abaixo */
+    border: 1px solid #ccc;
+    /* Cor da borda */
+}
+
+h3 {
+    color: #555;
+    /* Cor do placar */
+    font-weight: bold;
+    /* Negrito para o placar */
+    text-align: center;
+    /* Centraliza o texto do placar */
+}
+
+/* Efeitos de foco */
+.imagem label:focus {
+    outline: 2px solid #00796b;
+    /* Contorno ao focar no elemento */
+    outline-offset: 2px;
+    /* Espaço entre o contorno e o elemento */
+}
